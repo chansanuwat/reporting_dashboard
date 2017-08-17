@@ -1,0 +1,46 @@
+
+extends layout
+
+block content
+
+    //Test Detail
+
+    #projectInfoContent.contentBody
+        #contentSummary
+            #projectDetail.infoBox
+                #summaryTitle.infoBoxTitle
+
+                #summaryContent.infoBoxContent
+                    strong Description: 
+                    <br />
+                    <span id='projectDescription'></span>
+
+            #projectHistory.infoBox
+                #summary2Title.infoBoxTitle
+                    | History:
+
+                | <div id='historyChart' class='chart'></div>
+
+        #tests.infoBox
+            #contentTitle.infoBoxTitle
+
+            #dataTable.infoBoxContent
+                table.data
+                    thead
+                        th 
+                        th Test Name
+                        th Description
+                        th Environment
+                        th.center Total Scenarios
+                        th.center Passed
+                        th.center Failed
+                        th.center Skipped
+                        th
+                        th
+                    tbody                
+
+    <script type="text/javascript">
+       | var projectId = "#{id}";
+    </script>
+    script(src='https://www.gstatic.com/charts/loader.js')
+    script(src='/javascripts/project.js')

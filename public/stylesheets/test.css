@@ -1,0 +1,12 @@
+.resultDetail {
+  min-width: 300px;
+  max-width: 500px;
+}
+
+#scenarioMessage {
+  padding: 10px;
+}
+
+#scenarioNotes {
+  white-space: nowrap;
+}

@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/javascripts/global.js')
+  body
+    #header
+      #headerContent
+        span.headerTitle= title
+        span.headerMessage
+    
+      #nav
+        <a href="/">Dashboard</a>
+
+    block content

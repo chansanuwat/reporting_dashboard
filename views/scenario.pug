@@ -1,0 +1,64 @@
+
+extends layout
+
+block content
+
+    //Test Detail
+
+    #scenarioInfoContent.contentBody
+        #contentSummary
+            #scenarioDetails.infoBox 
+                #summaryTitle.infoBoxTitle 
+
+                #summaryContent.infoBoxContent 
+                    strong Steps: 
+
+                    #scenarioSteps
+
+            #testHistory.infoBox
+                #summary2Title.infoBoxTitle
+                    | Results:
+
+                | <div id='resultChart' class='chart'></div>
+
+        #testResults.infoBox
+            #contentTitle.infoBoxTitle
+
+            #dataTable.infoBoxContent
+                table.data
+                    thead
+                        th 
+                        th Test Name
+                        th Message
+                        th Duration
+                        th
+                        th
+                    tbody
+
+    #popup.testDetail
+        span.closebtn(onclick='closeDetail("#popup","#testResults")') &times;
+
+        #testDetail.content
+            #linkToTest
+
+            #testInfo
+                #testInfoContent
+                    #summaryHolder
+                        
+                    strong Name: 
+                    | <span id='testName'></span><br />
+                    strong Description: 
+                    | <span id='testDesc'></span><br />
+                    strong Environment: 
+                    | <span id='testEnv'></span><br />
+                    strong Notes: 
+                    | <span id='testNotes'></span><br />
+                    #linkToTest
+                #testInfoMessage
+                
+
+    <script type="text/javascript">
+       | var scenarioId = "#{id}";
+    </script>
+    script(src='https://www.gstatic.com/charts/loader.js')
+    script(src='/javascripts/scenario.js')

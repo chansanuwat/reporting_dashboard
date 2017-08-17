@@ -1,0 +1,47 @@
+
+extends layout
+
+block content
+
+    // Wrapper
+    #dashboardContent.contentBody
+
+        // PROJECT CARDS
+        #projectCards
+
+        // /PROJECT CARDS
+
+    // /WRAPPER
+
+    //Test Detail
+    #popup.testDetail
+        span.closebtn(onclick='closeDetail("#popup","#projectCards")') &times;
+
+        #testDetail.content
+            #linkToProject
+            div
+                .title History
+                <div id='historyChart' class='chart'></div>
+            .title Latest Test Run
+
+            #testInfo
+                #testInfoContent
+                    #summaryHolder
+                        
+                    strong Name: 
+                    | <span id='testName'></span><br />
+                    strong Description: 
+                    | <span id='testDesc'></span><br />
+                    strong Environment: 
+                    | <span id='testEnv'></span><br />
+                    strong Notes: 
+                    | <span id='testNotes'></span><br />
+                    #linkToTest
+                #testInfoMessage
+            
+            #linkToDelete
+
+        // /Test Detail
+
+    script(src='https://www.gstatic.com/charts/loader.js')
+    script(src='/javascripts/home.js')
